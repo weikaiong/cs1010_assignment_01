@@ -9,8 +9,29 @@
  * @author: XXX (Group YYY)
  */
 
-#include "cs1010.h"
+#include<stdio.h>
+#include <math.h>
 
-int main()
-{
+long square(long x){
+  return x * x;
+}
+
+long sum_of_digits_square(long number){
+    if(number < 0){
+        printf("Invalid Input\n");
+        return 0;
+    }
+    long digit = number%10;
+    if(digit == number){ 
+        return square(number); 
+    }
+    else{
+        return square(digit)+sum_of_digits_square(number/10);
+    }
+}
+
+int main(){
+    long number = -1;
+    long sum = sum_of_digits_square(number);
+    printf("%d", sum);
 }

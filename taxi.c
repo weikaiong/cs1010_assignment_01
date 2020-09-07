@@ -10,8 +10,10 @@
  * @author: XXX (Group YYY)
  */
 
-#include "cs1010.h"
+#include <stdio.h>
 #include <stdbool.h>
+
+
 
 int main()
 {
