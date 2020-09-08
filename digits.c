@@ -9,7 +9,7 @@
  * @author: XXX (Group YYY)
  */
 
-#include<stdio.h>
+#include "cs1010.h"
 #include <math.h>
 
 long square(long x){
@@ -18,7 +18,7 @@ long square(long x){
 
 long sum_of_digits_square(long number){
     if(number < 0){
-        printf("Invalid Input\n");
+        cs1010_println_string("Invalid Input"); 
         return 0;
     }
     long digit = number%10;
@@ -31,7 +31,7 @@ long sum_of_digits_square(long number){
 }
 
 int main(){
-    long number = -1;
+    long number = cs1010_read_long();
     long sum = sum_of_digits_square(number);
-    printf("%d", sum);
+    cs1010_print_long(sum);
 }

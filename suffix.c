@@ -7,27 +7,31 @@
  * @file: suffix.c
  * @author: XXX (Group YYY)
  */
-#include<stdio.h>
+#include "cs1010.h"
 #include <math.h>
 
 void print_with_suffix(long number){
     long last_digit = number%10; 
     long second_last_digit = number%100; 
     if(last_digit == 1 && second_last_digit != 11){
-        printf("%dst", number); 
+        cs1010_print_long(number); 
+        cs1010_print_string("st"); 
     } 
     else if(last_digit == 2 && second_last_digit != 12){
-        printf("%dnd", number); 
+        cs1010_print_long(number); 
+        cs1010_print_string("nd"); 
     } 
     else if(last_digit == 3 && second_last_digit != 13){
-        printf("%drd", number); 
+        cs1010_print_long(number); 
+        cs1010_print_string("rd"); 
     } 
     else {
-        printf("%dth", number);
+        cs1010_print_long(number); 
+        cs1010_print_string("th"); 
     }
 }
 
 int main(){
-    long number = 122;
+    long number = cs1010_read_long();
     print_with_suffix(number);
 }

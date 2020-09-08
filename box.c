@@ -10,7 +10,7 @@
  * @file: box.c
  * @author: XXX (Group YYY)
  */
-#include <stdio.h>
+#include "cs1010.h"
 #include <math.h>
 
 long area_of_rectangle(long width, long height){ 
@@ -20,7 +20,7 @@ long area_of_rectangle(long width, long height){
 long surface_area(long width, long length, long height){
     long side_1, side_2, side_3; 
     if(length  <= 0 || width <= 0 || height <= 0){
-        printf("invalid input \n");
+        cs1010_print_string("Invalid Input"); 
         return 0; 
     }
     side_1 = area_of_rectangle(width, height);
@@ -35,21 +35,21 @@ long square(long x){
 
 double hypotenuse_of(double width, double height, double length){
     if(length  <= 0 || width <= 0 || height <= 0){
-        printf("invalid input \n");
+        cs1010_print_string("Invalid Input"); 
         return 0; 
     }
     return sqrt(square(width) + square(height) + square(length));
 }
 
 int main() {
-    long width = 10;
-    long height = 20;
-    long length = 30; 
+    long width = cs1010_read_long();
+    long height = cs1010_read_long();
+    long length = cs1010_read_long(); 
     long a;
     double b; 
     a = surface_area(width , height, length);
     b = hypotenuse_of(width , height, length);
-    printf("Surface Area: %d\n", a);
-    printf("hypotenuse Of: %.4f\n", b);
+    cs1010_print_long(a); 
+    cs1010_print_long(b); 
     return 0;
 }
